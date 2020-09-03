@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Yeon+Sung&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -17,6 +19,7 @@ body {
   height: 100vh;
   background-color: #104e05;
   color: white;
+  font-family: "Yeon Sung", cursive;
 }
 
 .wrapper {
@@ -73,7 +76,7 @@ input[type="number"] {
 
 .result-pointer_desc {
   position: absolute;
-  left: -20px;
+  left: -35px;
   font-size: 15px !important;
   transform: rotateZ(-20deg);
 }
@@ -91,7 +94,6 @@ input[type="number"] {
 .result-pointer_btn:hover {
   cursor: pointer;
   animation: none;
-  border-bottom: 1px solid white;
   text-shadow: 0px -2px 15px white;
 }
 
@@ -108,7 +110,7 @@ input[type="number"] {
   bottom: 10vh;
   display: flex;
   flex-direction: column;
-  font-size: 15px;
+  font-size: 20px;
   text-align: right;
   transform: rotateZ(5deg);
 }
