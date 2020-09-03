@@ -1,16 +1,20 @@
-document.querySelector("input").addEventListener("change", () => {
-  const firstValue = document.querySelector(".js-firstValue").value;
-  const secondValue = document.querySelector(".js-secondValue").value;
-  const result = document.querySelector(".js-result").textContent;
-  const errorMessage = document.querySelector(".js-errorMessage").textContent;
+document
+  .querySelector(".js-result-pointer_btn")
+  .addEventListener("click", () => {
+    const firstValue = document.querySelector(".js-firstValue").value;
+    const secondValue = document.querySelector(".js-secondValue").value;
 
-  if (firstValue) {
-    if (secondValue) {
-      result = firstValue * secondValue;
+    if (firstValue) {
+      if (secondValue) {
+        document.querySelector(".js-result").textContent =
+          firstValue * secondValue;
+        document.querySelector(".js-errorMessage").textContent = "";
+      } else {
+        document.querySelector(".js-errorMessage").textContent =
+          "Please enter the second value";
+      }
     } else {
-      errorMessage = "Please enter the second value";
+      document.querySelector(".js-errorMessage").textContent =
+        "Please enter the first value";
     }
-  } else {
-    errorMessage = "Please enter the first value";
-  }
-});
+  });
