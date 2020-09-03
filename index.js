@@ -1,16 +1,16 @@
-const firstValue = document.querySelector("#firstValue").value;
-const secondValue = document.querySelector("#secondValue").value;
-const result = document.querySelector("#result").textContent;
-const errorMessage = document.querySelector("#errorMessage");
+document.querySelector("input").addEventListener("change", () => {
+  const firstValue = document.querySelector(".js-firstValue").value;
+  const secondValue = document.querySelector(".js-secondValue").value;
+  const result = document.querySelector(".js-result").textContent;
+  const errorMessage = document.querySelector(".js-errorMessage").textContent;
 
-if (firstValue) {
-  if (secondValue) {
-    result = firstValue * secondValue;
+  if (firstValue) {
+    if (secondValue) {
+      result = firstValue * secondValue;
+    } else {
+      errorMessage = "Please enter the second value";
+    }
   } else {
-    errorMessage.textContent = "Please enter the second value";
+    errorMessage = "Please enter the first value";
   }
-} else {
-  errorMessage.textContent = "Please enter the first value";
-}
-
-function init() {}
+});
