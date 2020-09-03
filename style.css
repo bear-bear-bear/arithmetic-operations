@@ -56,7 +56,6 @@ span {
 }
 
 #errorMessage {
-  display: none;
   color: tomato;
   text-align: right;
   font-size: 25px;
