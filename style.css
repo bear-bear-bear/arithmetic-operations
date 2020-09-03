@@ -49,6 +49,8 @@ input[type="number"] {
 .result {
   margin-right: 20px;
   margin-left: 15px;
+  border-bottom: 2px solid white;
+  border-radius: 1.5px;
 }
 
 @keyframes point {
