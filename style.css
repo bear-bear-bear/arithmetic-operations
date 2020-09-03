@@ -51,6 +51,43 @@ input[type="number"] {
   margin-left: 15px;
 }
 
+@keyframes point {
+  0%,
+  100% {
+    transform: none;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+.result-pointer {
+  display: flex;
+  position: relative;
+}
+
+.result-pointer_desc {
+  position: absolute;
+  left: -20px;
+  font-size: 15px;
+  transform: rotateZ(-20deg);
+}
+
+.result-pointer_btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  transition: all 0.2s ease-in-out;
+  animation: point 0.5s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+.result-pointer_btn:hover {
+  cursor: pointer;
+  animation: none;
+  text-shadow: 0px -2px 15px white;
+}
+
 span {
   font-size: 40px;
 }
