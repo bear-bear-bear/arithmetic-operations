@@ -54,3 +54,11 @@ input[type="number"] {
 span {
   font-size: 40px;
 }
+
+#errorMessage {
+  display: none;
+  color: tomato;
+  text-align: right;
+  font-size: 25px;
+  width: 480px;
+}
