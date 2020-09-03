@@ -4,17 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Multiplication Table</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div>
-      <input type="number" id="firstNumber" />
-      <span>X</span>
-      <input type="number" id="secondNumber" />
-      <button id="clickBtn">실행</button>
-    </div>
-    <div>
-      <span>=</span>
-      <span id="result"></span>
+    <div class="wrapper">
+      <div class="input-wrap">
+        <input type="number" id="firstNumber" />
+        <span>X</span>
+        <input type="number" id="secondNumber" />
+      </div>
+      <div class="result-wrap">
+        <span>→</span>
+        <span id="result">0</span>
+      </div>
     </div>
     <script src="./index.js"></script>
   </body>
