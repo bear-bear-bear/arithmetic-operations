@@ -37,6 +37,10 @@ body {
   display: flex;
   align-items: center;
 }
+.input-wrap > span {
+  position: relative;
+  top: 10px;
+}
 
 input[type="number"] {
   margin: 0 20px;
