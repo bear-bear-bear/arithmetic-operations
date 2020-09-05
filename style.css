@@ -16,20 +16,20 @@ body {
   background-color: #104e05;
   color: white;
   font-family: "Yeon Sung", cursive;
-  --arithmetic-wrapper-width: 490px;
-  --arithmetic-wrapper-height: 170px;
+  --calculate-wrapper-width: 490px;
+  --calculate-wrapper-height: 170px;
 }
 
-.arithmetic-wrapper {
-  width: var(--arithmetic-wrapper-width);
-  height: var(--arithmetic-wrapper-height);
+.calculate-wrapper {
+  width: var(--calculate-wrapper-width);
+  height: var(--calculate-wrapper-height);
   min-width: 275px;
   padding: 20px 10px;
   border: 5px solid white;
   border-radius: 10px;
 }
 
-.arithmetic-wrapper span {
+.calculate-wrapper span {
   font-size: 40px;
 }
 
@@ -132,12 +132,12 @@ input[type="number"]:focus {
 }
 
 @media screen and (max-width: 490px) {
-  .arithmetic-wrapper {
+  .calculate-wrapper {
     width: 98vw;
     height: 140px;
     padding: 10px 5px;
   }
-  .arithmetic-wrapper span {
+  .calculate-wrapper span {
     font-size: 30px;
   }
   .input-wrap {
