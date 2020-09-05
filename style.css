@@ -7,10 +7,6 @@
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   width: 100vw;
   height: 100vh;
   background-color: #104e05;
@@ -20,10 +16,25 @@ body {
   --calculate-wrapper-height: 170px;
 }
 
+.arithmetic-layout {
+  margin: 6vh 4vw;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.arithmetic-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+
 .calculate-wrapper {
   width: var(--calculate-wrapper-width);
   height: var(--calculate-wrapper-height);
   min-width: 275px;
+  margin: 35px 25px;
   padding: 20px 10px;
   border: 5px solid white;
   border-radius: 10px;
@@ -129,16 +140,30 @@ input[type="number"]:focus {
   text-align: right;
   transform: rotateZ(5deg);
 }
-@media screen and (max-height: 450px) {
+@media screen and (max-height: 600px), screen and (max-width: 780px) {
   .board-doodle {
     display: none;
   }
 }
 
 @media screen and (max-width: 490px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .arithmetic-layout {
+    margin: 0;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
   .calculate-wrapper {
     width: 98vw;
     height: 140px;
+    margin: 10px;
     padding: 10px 5px;
   }
   .calculate-wrapper span {
