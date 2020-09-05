@@ -6,10 +6,6 @@
   box-sizing: border-box;
 }
 
-html {
-  min-width: 500px;
-  min-height: 400px;
-}
 body {
   display: flex;
   flex-direction: column;
@@ -20,15 +16,20 @@ body {
   background-color: #104e05;
   color: white;
   font-family: "Yeon Sung", cursive;
+  --arithmetic-wrapper-width: 490px;
+  --arithmetic-wrapper-height: 170px;
 }
 
-.wrapper {
-  padding: 30px 10px;
+.arithmetic-wrapper {
+  width: var(--arithmetic-wrapper-width);
+  height: var(--arithmetic-wrapper-height);
+  min-width: 275px;
+  padding: 20px 10px;
   border: 5px solid white;
   border-radius: 10px;
 }
 
-.wrapper span {
+.arithmetic-wrapper span {
   font-size: 40px;
 }
 
@@ -64,26 +65,22 @@ input[type="number"]:focus {
   justify-content: flex-end;
   align-items: center;
 }
-
 .result {
   margin-right: 20px;
   margin-left: 15px;
   border-bottom: 2px solid white;
   border-radius: 1.5px;
 }
-
 .result-pointer {
   display: flex;
   position: relative;
 }
-
 .result-pointer_desc {
   position: absolute;
   left: -35px;
   font-size: 15px !important;
   transform: rotateZ(-20deg);
 }
-
 @keyframes point {
   0%,
   25%,
@@ -96,7 +93,6 @@ input[type="number"]:focus {
     transform: scale(1.1);
   }
 }
-
 .result-pointer_btn {
   position: relative;
   display: flex;
@@ -106,7 +102,6 @@ input[type="number"]:focus {
   animation: point 1.5s ease-in-out infinite;
   animation-delay: 1s;
 }
-
 .result-pointer_btn:hover {
   cursor: pointer;
   animation: none;
@@ -130,9 +125,34 @@ input[type="number"]:focus {
   text-align: right;
   transform: rotateZ(5deg);
 }
-
 @media screen and (max-height: 450px) {
   .board-doodle {
     display: none;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .arithmetic-wrapper {
+    width: 98vw;
+    height: 140px;
+    padding: 10px 5px;
+  }
+  .arithmetic-wrapper span {
+    font-size: 30px;
+  }
+  .input-wrap {
+    justify-content: center;
+  }
+  input[type="number"] {
+    margin: 0 15px;
+    width: 30vw;
+    font-size: 20px;
+  }
+  .errorMessage {
+    font-size: 20px;
+    width: 95vw;
+  }
+  .board-doodle {
+    font-size: 18px;
   }
 }
