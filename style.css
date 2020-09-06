@@ -14,20 +14,18 @@ body {
   font-family: "Yeon Sung", cursive;
   --calculate-wrapper-width: 490px;
   --calculate-wrapper-height: 170px;
+  overflow: hidden;
 }
 
 .arithmetic-layout {
-  margin: 6vh 4vw;
   display: flex;
+  width: 80vw;
+  margin: 6vh 4vw;
   flex-wrap: wrap;
 }
 
 .arithmetic-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
+  position: relative;
 }
 
 .calculate-wrapper {
@@ -124,8 +122,10 @@ input[type="number"]:focus {
 }
 
 .errorMessage {
+  position: absolute;
+  top: 210px;
+  left: 195px;
   color: inherit;
-  text-align: right;
   font-size: 25px;
   width: 480px;
 }
@@ -140,12 +140,31 @@ input[type="number"]:focus {
   text-align: right;
   transform: rotateZ(5deg);
 }
+@media screen and (max-height: 500px), screen and (max-width: 1350px) {
+  body {
+    overflow: initial;
+  }
+  body::-webkit-scrollbar {
+    width: 8px;
+    height: 0;
+  }
+  body::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 10px;
+    height: 10px;
+  }
+  body::-webkit-scrollbar-button {
+    display: none;
+  }
+  body::-webkit-scrollbar-corner {
+    background-color: inherit;
+  }
+}
 @media screen and (max-height: 600px), screen and (max-width: 780px) {
   .board-doodle {
     display: none;
   }
 }
-
 @media screen and (max-width: 490px) {
   body {
     display: flex;
@@ -159,6 +178,13 @@ input[type="number"]:focus {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+  .arithmetic-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
   }
   .calculate-wrapper {
     width: 98vw;
@@ -178,8 +204,12 @@ input[type="number"]:focus {
     font-size: 20px;
   }
   .errorMessage {
+    position: relative;
+    top: initial;
+    left: initial;
     font-size: 20px;
     width: 95vw;
+    text-align: right;
   }
   .board-doodle {
     font-size: 18px;
