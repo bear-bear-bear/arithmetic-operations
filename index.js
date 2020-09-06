@@ -18,79 +18,83 @@ print the results of the correct equation in the correct position based on KeyCl
 
 const btn = document.querySelectorAll(".js-result-pointer_btn");
 
+let current = {
+  keyClass: "",
+  operator: "",
+  firstNum: 0,
+  secondNum: 0,
+  errorMessage: "",
+  result: "",
+};
 const calculate = {
   add: {
     symbol: "+",
     calculus: function () {
-      return currentFirstNum + currentSecondNum;
+      return current.firstNum + current.secondNum;
     },
   },
   sub: {
     symbol: "-",
     calculus: function () {
-      return currentFirstNum - currentSecondNum;
+      return current.firstNum - current.secondNum;
     },
   },
   mul: {
     symbol: "X",
     calculus: function () {
-      return currentFirstNum * currentSecondNum;
+      return current.firstNum * current.secondNum;
     },
   },
   div: {
     symbol: "/",
     calculus: function () {
-      return currentFirstNum / currentSecondNum;
+      return current.firstNum / current.secondNum;
     },
   },
 };
 const operators = Object.keys(calculate);
-let currentKeyClass = "";
-let currentOperator = "";
-let currentFirstNum = 0;
-let currentSecondNum = 0;
 
-function getResult(currentOperator, currentKeyClass) {
-  let resultBox = document.getElementsByClassName(currentKeyClass)[2];
+function getResult(currentOperator, currentkeyClass) {
+  current.result = document.getElementsByClassName(currentkeyClass)[2];
 
   operators.forEach((operator) => {
     if (calculate[operator]["symbol"] === currentOperator) {
-      resultBox.textContent = calculate[operator].calculus();
+      current.result.textContent = calculate[operator].calculus();
     }
   });
 }
 
-function isNum() {
-  currentErrorMessage = document.getElementsByClassName(currentKeyClass)[3];
+function isNum(currentkeyClass) {
+  current.errorMessage = document.getElementsByClassName(currentkeyClass)[3];
 
-  if (currentFirstNum && currentSecondNum) {
-    currentErrorMessage.textContent = "";
+  if (current.firstNum && current.secondNum) {
+    current.errorMessage.textContent = "";
   } else {
-    currentErrorMessage.textContent = "Please enter the empty value";
+    current.errorMessage.textContent = "Please enter the empty value";
   }
 }
 
-function setEquation(currentKeyClass) {
+function setEquation(currentkeyClass) {
   let currentOperatorWrapper = document.getElementsByClassName(
-    currentKeyClass
+    currentkeyClass
   )[0];
 
-  currentOperator = currentOperatorWrapper.textContent;
-  currentFirstNum = parseInt(
+  current.operator = currentOperatorWrapper.textContent;
+  current.firstNum = parseInt(
     currentOperatorWrapper.previousElementSibling.value
   );
-  currentSecondNum = parseInt(currentOperatorWrapper.nextElementSibling.value);
+  current.secondNum = parseInt(currentOperatorWrapper.nextElementSibling.value);
 
-  isNum();
-  getResult(currentOperator, currentKeyClass);
+  isNum(currentkeyClass);
+  getResult(current.operator, currentkeyClass);
 }
 
 function findKeyClass(e) {
   const currentBtnClassList = e.target.classList;
 
-  currentKeyClass = currentBtnClassList[currentBtnClassList.length - 1];
+  current.keyClass = currentBtnClassList[currentBtnClassList.length - 1];
 
-  setEquation(currentKeyClass);
+  setEquation(current.keyClass);
 }
 
 function init() {
