@@ -60,6 +60,16 @@ function getResult(currentOperator, currentKeyClass) {
   });
 }
 
+function isNum() {
+  currentErrorMessage = document.getElementsByClassName(currentKeyClass)[3];
+
+  if (currentFirstNum && currentSecondNum) {
+    currentErrorMessage.textContent = "";
+  } else {
+    currentErrorMessage.textContent = "Please enter the empty value";
+  }
+}
+
 function setEquation(currentKeyClass) {
   let currentOperatorWrapper = document.getElementsByClassName(
     currentKeyClass
@@ -71,7 +81,7 @@ function setEquation(currentKeyClass) {
   );
   currentSecondNum = parseInt(currentOperatorWrapper.nextElementSibling.value);
 
-  // isNum();
+  isNum();
   getResult(currentOperator, currentKeyClass);
 }
 
@@ -79,14 +89,9 @@ function findKeyClass(e) {
   const currentBtnClassList = e.target.classList;
 
   currentKeyClass = currentBtnClassList[currentBtnClassList.length - 1];
+
   setEquation(currentKeyClass);
 }
-
-// function isNum(/* object */) {
-//   if (/* !currentFirstNum && !currentSecondNum */ ){
-//     object.errorMessage.textContent ="Please enter the empty value";
-//   }
-// }
 
 function init() {
   btn.forEach((button) =>
