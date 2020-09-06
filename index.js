@@ -47,14 +47,14 @@ let firstNum = 0;
 let secondNum = 0;
 let currentOperator = "";
 
-function getResult(currentOperator) {
+function getResult(currentOperator, currentKeyClass) {
+  let resultBox = document.getElementsByClassName(currentKeyClass)[2];
+
   operators.forEach((operator) => {
     if (calculate[operator]["symbol"] === currentOperator) {
-      console.log(calculate[operator].calculus());
-      console.log(`'${calculate[operator]["symbol"]}'`);
+      resultBox.textContent = calculate[operator].calculus();
     }
   });
-  // console.log(calculate[operator]["symbol"];
 }
 
 function setEquation(currentKeyClass) {
