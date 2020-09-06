@@ -168,6 +168,9 @@ input[type="number"]:focus {
   body::-webkit-scrollbar-corner {
     background-color: inherit;
   }
+  .board-doodle {
+    position: fixed;
+  }
 }
 @media screen and (max-height: 600px), screen and (max-width: 780px) {
   .board-doodle {
