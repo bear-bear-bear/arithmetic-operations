@@ -1,8 +1,21 @@
-// html 상에서 같은 계산기 박스 부모를 가지는 연산기호, 화살표버튼, 결과값에 공통된 클래스_KeyClass 를 부여함
-//  (ex- 더하기 박스 안에선 공통 클래스 js-add 부여)
-// 클릭 이벤트에 반응하는 화살표 버튼의 KeyClass 를 바탕으로 올바른 계산식의 결과를 정확한 위치에 출력
+/*
+같은 계산기 박스 부모를 가지는 연산기호, 화살표버튼, 결과값에 공통된 특정 클래스_KeyClass가 부여된 상태입니다.
+(ex- 더하기 박스 안에선 공통 클래스 js-add 부여)
+  _KeyClass.classList[0] >> 연산기호
+  _KeyClass.classList[1] >> 화살표버튼
+  _KeyClass.classList[2] >> 결과값
+클릭 이벤트에 반응하는 화살표 버튼의 KeyClass 를 바탕으로 올바른 계산식의 결과를 정확한 위치에 출력합니다.
+-------------------------------------------
+given a specific class_KeyClass that is common to computational symbols, arrow buttons, and results with the same calculator box parents.
+(ex- 'addition-box' has KeyClass 'js-add')
+  _KeyClass.classList[0] >> computational symbol
+  _KeyClass.classList[1] >> arrow button
+  _KeyClass.classList[2] >> Result Value
+print the results of the correct equation in the correct position based on KeyClass in the arrow buttons that respond to the click event.
+*/
 
 const btn = document.querySelectorAll(".js-result-pointer_btn");
+
 const calculate = {
   add: {
     symbol: "+",
@@ -50,22 +63,17 @@ function setEquation(currentKeyClass) {
   )[0];
 
   currentOperator = currentOperatorWrapper.textContent;
-  firstNum = currentOperatorWrapper.previousElementSibling.value;
-  secondNum = currentOperatorWrapper.nextElementSibling.value;
+  firstNum = parseInt(currentOperatorWrapper.previousElementSibling.value);
+  secondNum = parseInt(currentOperatorWrapper.nextElementSibling.value);
 
-  getResult(currentOperator);
-
-  console.log(`currentOperator = '${currentOperator}'`);
-  console.log(`firstNum = '${firstNum}', secondNum = '${secondNum}'`);
+  getResult(currentOperator, currentKeyClass);
 }
 
 function findKeyClass(e) {
   const currentBtnClassList = e.target.classList;
 
-  currentKeyClass = currentBtnClassList[currentBtnClassList.length - 1]; // 클릭된 버튼의 클래스 배열중에 마지막 요소가 연산자를 나타내는 클래스
+  currentKeyClass = currentBtnClassList[currentBtnClassList.length - 1];
   setEquation(currentKeyClass);
-
-  console.log(`currenKeyClass = '${currentKeyClass}'`);
 }
 
 // function isNum(/* object */) {
