@@ -5,60 +5,71 @@
 const btn = document.querySelectorAll(".js-result-pointer_btn");
 const calculate = {
   add: {
-    className: "js-add",
-    operator: "+",
+    symbol: "+",
     calculus: function () {
-      return a + b;
+      return firstNum + secondNum;
     },
   },
   sub: {
-    className: "js-sub",
-    operator: "-",
+    symbol: "-",
     calculus: function () {
-      return a - b;
+      return firstNum - secondNum;
     },
   },
   mul: {
-    className: "js-mul",
-    operator: "X",
+    symbol: "X",
     calculus: function () {
-      return a * b;
+      return firstNum * secondNum;
     },
   },
   div: {
-    className: "js-div",
-    operator: "÷",
+    symbol: "÷",
     calculus: function () {
-      return a / b;
+      return firstNum / secondNum;
     },
   },
 };
-// const operators = Object.keys(calculate);
-let firstValue = 0;
-let secondValue = 0;
-let currentKeyClass = "";
+const operators = Object.keys(calculate);
+let firstNum = 0;
+let secondNum = 0;
+let currentOperator = "";
 
-// function setCalculus() {
-//   console.log(calculate.add.className);
-// }
+function getResult(currentOperator) {
+  operators.forEach((operator) => {
+    if (calculate[operator]["symbol"] === currentOperator) {
+      console.log(calculate[operator].calculus());
+      console.log(`'${calculate[operator]["symbol"]}'`);
+    }
+  });
+  // console.log(calculate[operator]["symbol"];
+}
 
-function setNumbers() {
-  let currentOperator = document.getElementsByClassName(currentKeyClass);
-  firstValue = currentOperator[0].previousElementSibling.value;
-  secondValue = currentOperator[0].nextElementSibling.value;
-  console.log(`firstValue is ${firstValue}, secondValue is ${secondValue}`);
+function setEquation(currentKeyClass) {
+  let currentOperatorWrapper = document.getElementsByClassName(
+    currentKeyClass
+  )[0];
+
+  currentOperator = currentOperatorWrapper.textContent;
+  firstNum = currentOperatorWrapper.previousElementSibling.value;
+  secondNum = currentOperatorWrapper.nextElementSibling.value;
+
+  getResult(currentOperator);
+
+  console.log(`currentOperator = '${currentOperator}'`);
+  console.log(`firstNum = '${firstNum}', secondNum = '${secondNum}'`);
 }
 
 function findKeyClass(e) {
   const currentBtnClassList = e.target.classList;
+
   currentKeyClass = currentBtnClassList[currentBtnClassList.length - 1]; // 클릭된 버튼의 클래스 배열중에 마지막 요소가 연산자를 나타내는 클래스
-  setNumbers();
-  setCalculus();
-  console.log(`currenKeyClass is ${currentKeyClass}`);
+  setEquation(currentKeyClass);
+
+  console.log(`currenKeyClass = '${currentKeyClass}'`);
 }
 
 // function isNum(/* object */) {
-//   if (/* !firstValue && !secondValue */ ){
+//   if (/* !firstNum && !secondNum */ ){
 //     object.errorMessage.textContent ="Please enter the empty value";
 //   }
 // }
