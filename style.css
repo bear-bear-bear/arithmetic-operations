@@ -124,7 +124,7 @@ input[type="number"]:focus {
 .errorMessage {
   position: absolute;
   top: 210px;
-  left: 220px;
+  left: 195px;
   color: inherit;
   font-size: 25px;
   width: 480px;

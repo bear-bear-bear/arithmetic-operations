@@ -1,11 +1,11 @@
 /*
-°°Àº °è»ê±â ¹Ú½º ºÎ¸ğ¸¦ °¡Áö´Â ¿¬»ê±âÈ£, È­»ìÇ¥¹öÆ°, °á°ú°ª, ¿¡·¯¸Ş¼¼Áö¿¡ °øÅëµÈ Æ¯Á¤ Å¬·¡½º_KeyClass°¡ ºÎ¿©µÈ »óÅÂÀÔ´Ï´Ù.
-(ex- ´õÇÏ±â ¹Ú½º ¾È¿¡¼± °øÅë Å¬·¡½º js-add ºÎ¿©)
-  _KeyClass.classList[0] >> ¿¬»ê±âÈ£
-  _KeyClass.classList[1] >> È­»ìÇ¥¹öÆ°
-  _KeyClass.classList[2] >> °á°ú°ª
-  _KeyClass.classList[3] >> ¿¡·¯ ¸Ş¼¼Áö
-Å¬¸¯ ÀÌº¥Æ®¿¡ ¹İÀÀÇÏ´Â È­»ìÇ¥ ¹öÆ°ÀÇ KeyClass ¸¦ ¹ÙÅÁÀ¸·Î ¿Ã¹Ù¸¥ °è»ê½ÄÀÇ °á°ú¸¦ Á¤È®ÇÑ À§Ä¡¿¡ Ãâ·ÂÇÕ´Ï´Ù.
+ê°™ì€ ê³„ì‚°ê¸° ë°•ìŠ¤ ë¶€ëª¨ë¥¼ ê°€ì§€ëŠ” ì—°ì‚°ê¸°í˜¸, í™”ì‚´í‘œë²„íŠ¼, ê²°ê³¼ê°’, ì—ëŸ¬ë©”ì„¸ì§€ì— ê³µí†µëœ íŠ¹ì • í´ë˜ìŠ¤_KeyClassê°€ ë¶€ì—¬ëœ ìƒíƒœì…ë‹ˆë‹¤.
+(ex- ë”í•˜ê¸° ë°•ìŠ¤ ì•ˆì—ì„  ê³µí†µ í´ë˜ìŠ¤ js-add ë¶€ì—¬)
+  _KeyClass.classList[0] >> ì—°ì‚°ê¸°í˜¸
+  _KeyClass.classList[1] >> í™”ì‚´í‘œë²„íŠ¼
+  _KeyClass.classList[2] >> ê²°ê³¼ê°’
+  _KeyClass.classList[3] >> ì—ëŸ¬ ë©”ì„¸ì§€
+í´ë¦­ ì´ë²¤íŠ¸ì— ë°˜ì‘í•˜ëŠ” í™”ì‚´í‘œ ë²„íŠ¼ì˜ KeyClass ë¥¼ ë°”íƒ•ìœ¼ë¡œ ì˜¬ë°”ë¥¸ ê³„ì‚°ì‹ì˜ ê²°ê³¼ë¥¼ ì •í™•í•œ ìœ„ì¹˜ì— ì¶œë ¥í•©ë‹ˆë‹¤.
 -------------------------------------------
 given a specific class_KeyClass that is common to computational symbols, arrow buttons, results, error messages with the same calculator box parents.
 (ex- 'addition-box' has KeyClass 'js-add')
@@ -70,7 +70,7 @@ function isNum(currentkeyClass) {
   if (current.firstNum && current.secondNum) {
     current.errorMessage.textContent = "";
   } else {
-    current.errorMessage.textContent = "Please enter the empty value";
+    current.errorMessage.textContent = `â†‘ Please enter the empty value`;
   }
 }
 
