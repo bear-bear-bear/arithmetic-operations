@@ -36,7 +36,7 @@ const calculate = {
     },
   },
   div: {
-    symbol: "¡À",
+    symbol: "/",
     calculus: function () {
       return firstNum / secondNum;
     },
