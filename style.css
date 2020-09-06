@@ -9,12 +9,15 @@
 body {
   width: 100vw;
   height: 100vh;
-  background-color: #104e05;
+  background-color: #0d1826;
   color: white;
   font-family: "Yeon Sung", cursive;
   --calculate-wrapper-width: 490px;
   --calculate-wrapper-height: 170px;
   overflow: hidden;
+  border: 30px solid #835318;
+  border-radius: 10px;
+  box-shadow: 10px 25px 50px inset rgba(0, 0, 0, 0.96);
 }
 
 .arithmetic-layout {
@@ -143,6 +146,8 @@ input[type="number"]:focus {
 @media screen and (max-height: 500px), screen and (max-width: 1350px) {
   body {
     overflow: initial;
+    border: none;
+    box-shadow: none;
   }
   body::-webkit-scrollbar {
     width: 8px;
