@@ -25,10 +25,7 @@ body {
 }
 
 .arithmetic-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  position: relative;
 }
 
 .calculate-wrapper {
@@ -125,8 +122,10 @@ input[type="number"]:focus {
 }
 
 .errorMessage {
+  position: absolute;
+  top: 210px;
+  left: 220px;
   color: inherit;
-  text-align: right;
   font-size: 25px;
   width: 480px;
 }
@@ -181,6 +180,10 @@ input[type="number"]:focus {
     align-items: center;
   }
   .arithmetic-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100vw;
   }
   .calculate-wrapper {
@@ -201,8 +204,12 @@ input[type="number"]:focus {
     font-size: 20px;
   }
   .errorMessage {
+    position: relative;
+    top: initial;
+    left: initial;
     font-size: 20px;
     width: 95vw;
+    text-align: right;
   }
   .board-doodle {
     font-size: 18px;
