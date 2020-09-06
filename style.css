@@ -68,12 +68,14 @@ input[type="number"] {
   border-bottom: 2px solid white;
   border-radius: 1.5px;
   text-align: center;
+  transition: all 0.2s ease-in-out;
 }
 input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 input[type="number"]:focus {
   outline: none;
+  transform: translateY(-3px);
 }
 
 .result-wrap {
