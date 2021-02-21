@@ -4,6 +4,8 @@
 
 ---
 
+<img src="https://github.com/bear-bear-bear/arithmetic-operations/blob/master/preview.PNG" width="50%" style="margin: 0 auto;">
+
 - Go to website → <a href="https://bear-bear-bear.github.io/arithmetic-operations/">산술 연산 웹 바로가기</a>
   <br/><br/>
 - 사용된 스택
